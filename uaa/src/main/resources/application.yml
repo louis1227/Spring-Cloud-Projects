@@ -21,3 +21,21 @@ endpoints:
     exposed-headers:
     allow-credentials: true
     max-age: 1800
+    
+
+spring:  
+  datasource:  
+    url : jdbc:mysql://localhost:3306/uaa  
+    username : root  
+    password : Huawei12#$  
+    driverClassName : com.mysql.jdbc.Driver  
+  jpa:  
+    database : MYSQL  
+    show-sql : true  
+    hibernate:  
+      ddl-auto : update  
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy  
+    properties:  
+      hibernate:  
+        dialect : org.hibernate.dialect.MySQL5Dialect  
