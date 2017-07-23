@@ -1,10 +1,10 @@
-##UAA部分
+<h3>UAA部分</h3>
 
-###通过验证码方式初始化认证
+1、采用authentication_code方式获取token，此方式最安全
+  1）获取code，采用get方法
 http://localhost:9999/uaa/oauth/authorize?response_type=code&client_id=acme&redirect_uri=http://example.com
-
-如果用户已经认证，那么页面将重定向到指定的页面，并且带上验证码，例如：e.g. http://example.com/?code=jYWioI.
-
-这个验证码将用于获取访问资源的Access_token
-
-curl acme:acmesecret@localhost:9999/uaa/oauth/token -d grant_type=authorization_code -d client_id=acme -d redirect_uri=http://example.com -d code=0CUgkq
+  2）获取token，采用post方法
+  acme:acmesecret@localhost:9999/uaa/oauth/token?grant_type=authorization_code&client_id=acme&redirect_uri=http://example.com&code=0CUgkq
+  
+2、采用用户名密码方式获取token，采用POST方法
+  acme:acmesecret@localhost:9999/uaa/oauth/token?grant_type=password&username=Myusername&password=Mypassword
