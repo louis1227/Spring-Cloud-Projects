@@ -13,15 +13,16 @@ logging:
       springframework:
         security: DEBUG
         
-endpoints:
-  cors:
-    allowed-origins: "*"
-    allowed-methods: GET, PUT, POST, DELETE, OPTIONS
-    allowed-headers: "*"
-    exposed-headers:
-    allow-credentials: true
-    max-age: 1800
+#endpoints:
+#  cors:
+#    allowed-origins: "*"
+#    allowed-methods: GET, PUT, POST, DELETE, OPTIONS
+#    allowed-headers: "*"
+#    exposed-headers:
+#    allow-credentials: true
+#    max-age: 1800
     
+
 
 spring:  
   datasource:  

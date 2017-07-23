@@ -1,6 +1,7 @@
 package com.louis.cloud.uaa.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -17,7 +18,10 @@ public class WebMvcConfig  extends WebMvcConfigurerAdapter {
 	
 	 @Override
 	  public void addCorsMappings(CorsRegistry registry) {
-	    registry.addMapping("*");
+	    registry.addMapping("*")
+	    .allowedOrigins("*")
+	    .allowedHeaders("*")
+	    .allowCredentials(true);
 	  }
 }
 
